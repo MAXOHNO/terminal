@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -14,14 +16,16 @@ import javax.swing.JTextField;
 
 public class GUI {
 
+	JFrame frame;
 	JLabel labels[] = new JLabel[8];
 	JButton button = new JButton();
 	JTextField textfield = new JTextField();
 	
 	
-	Execute exec = new Execute();
-	Add add = new Add();
-	Visit visit = new Visit();
+	Executer exec = new Executer();
+	Adder add = new Adder();
+	Visiter visit = new Visiter();
+	Opener open = new Opener();
 	
 	String inputPrefix = " u: ";
 	String reportPrefix = " c: ";
@@ -39,10 +43,16 @@ public class GUI {
 
 		for (JLabel label : labels) {
 			label = new JLabel();
+			label.setOpaque(true);
 		}
 
-		JFrame frame = new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		frame.addWindowListener(new WindowAdapter() {
+		    public void windowClosing(WindowEvent e) {
+		        frame.setExtendedState(JFrame.ICONIFIED);
+		    }
+		});
 
 		JPanel panel = (JPanel) frame.getContentPane();
 		panel.setLayout(null);
@@ -56,7 +66,6 @@ public class GUI {
 			labels[i].setBounds((int) (width * 0.025), (i) * (int) (height * 0.10) + 20, (int) (width * 0.95),
 					(int) (height * 0.09));
 			// labels[i].setBounds(50, i * 120, 800, 100);
-			labels[i].setOpaque(true);
 			labels[i].setBackground(labelsColor);
 			labels[i].setForeground(labelsColorForeground);
 			labels[i].setFont(font);
@@ -114,6 +123,8 @@ public class GUI {
 				reportConsole("visit <website>");
 			} else if (cmds[0].contains("7355608")){ 
 				reportConsole("u r cool");
+			} else if (cmds[0].contains("exit")){ 
+				System.exit(0);
 			} else {
 				reportConsole("ERROR: Not enough arguments given - type 'help' for help");
 				return;
@@ -129,7 +140,10 @@ public class GUI {
 			for (int i = 1; i < cmds.length; i++) {
 				tempContent += cmds[i] + " ";
 			}
-			add.addCommand(tempContent);
+			//add.addCommand(tempContent);
+			reportConsole("The Add Command is currently not working, sorry.");
+		} else if (cmds[0].contains("open")) {
+			open.open(cmds[1]);
 		}
 		
 	}
@@ -147,6 +161,10 @@ public class GUI {
 				labels[i].setText("");
 			}
 		}
+	}
+	
+	public void changeTitle(String title) {
+		frame.setTitle(title);
 	}
 
 }
