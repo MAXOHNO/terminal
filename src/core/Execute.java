@@ -11,23 +11,33 @@ public class Execute {
 	URL fileURL;
 	File config;
 	Scanner scan;
+	Scanner scan2count;
 
 	String[] configContent;
 	
-	int linesOfFile = 0;
+	int linesOfFile;
 
 	public Execute() {
+		linesOfFile = 0;
 		config = new File("src/core/config.cfg");
 		try {
 			scan = new Scanner(config);
+			scan2count = new Scanner(config);
 		} catch (FileNotFoundException e) {
 			System.out.println("no config.cfg found");
 			e.printStackTrace();
 		}
 		
-		// TODO: ACHTUNG ACHTUNG ACHTUNG WENN NEUE ZEILEN HINZUGEFÜGT WERDEN MUSS DER STRING VERLÄNGERT WERDEN
-		// TODO: WIE AUTOMATISIERE ICH DAS????
-		configContent = new String[4];
+
+		// Die Länge des Arrays configContent wird so lang gemacht, wie die Anzahl der Zeilen der config.cfg
+		// Neuer scanner ist dafür benötigt, weil der gleiche Scanner nicht wieder von der 1. Zeile anfangen kann zu lesen?
+		// Das verusacht probleme später beim executen
+		while(scan2count.hasNextLine()) {
+			linesOfFile++;
+			scan2count.nextLine();
+		}
+		
+		configContent = new String[linesOfFile];
 		
 	}
 
@@ -42,8 +52,6 @@ public class Execute {
 	}
 
 	public void execute(String arg) {
-		
-		// TODO: cpu-z geht, aber der zweite Eintrag des arrays in der Forschleife wird nicht gelesen, Furmark wird nicht erkannt?
 		
 		loadConfig();
 		

@@ -11,6 +11,8 @@ public class Add {
 	File config;
 	FileWriter writer;
 	
+	// TODO: Neuen FileWriter machen, dieser kann nur einmal schreiben, danach closed er sich selber und ist unnutzbar.
+	
 	public Add() {
 		
 		config = new File("src/core/config.cfg");

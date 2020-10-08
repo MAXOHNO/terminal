@@ -17,8 +17,11 @@ public class GUI {
 	JLabel labels[] = new JLabel[8];
 	JButton button = new JButton();
 	JTextField textfield = new JTextField();
+	
+	
 	Execute exec = new Execute();
 	Add add = new Add();
+	Visit visit = new Visit();
 	
 	String inputPrefix = " u: ";
 	String reportPrefix = " c: ";
@@ -105,14 +108,14 @@ public class GUI {
 		
 		if (cmds.length <= 1) {
 			if (cmds[0].contains("help")) {
-				reportConsole("*************************");
 				reportConsole("Commands:");
 				reportConsole("add <prefix> <object> <path>");
 				reportConsole("execute <program>");
 				reportConsole("visit <website>");
-				reportConsole("*************************");
+			} else if (cmds[0].contains("7355608")){ 
+				reportConsole("u r cool");
 			} else {
-				reportConsole("ERROR: Not enough arguments given");
+				reportConsole("ERROR: Not enough arguments given - type 'help' for help");
 				return;
 			}
 		}
@@ -120,7 +123,7 @@ public class GUI {
 		if (cmds[0].contains("exec")) {
 			exec.execute(cmds[1]);
 		} else if (cmds[0].contains("visit")) {
-			System.out.println(cmds[0]);
+			visit.visit(cmds[1]);
 		} else if (cmds[0].contains("add")) {
 			String tempContent = "";
 			for (int i = 1; i < cmds.length; i++) {
