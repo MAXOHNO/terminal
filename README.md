@@ -6,7 +6,7 @@ Open the 'Terminal (download).zip' file
 to make the .jar work you need the config.cfg, it needs to be in a src/core/config.cfg folder. The src folder must be in the same location as the .jar
 
 # Commands
-execute «program» 
+execute «program»   
 | Program must be defined in the config.cfg in following format: execute «program» «path»  
   
 open «folder»     
