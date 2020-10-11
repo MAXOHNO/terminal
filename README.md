@@ -20,6 +20,9 @@ search «string»
   
 youtube «string»  
 | Your chosen string will be searched using the youtube search engine  
+
+help  
+|  get help in the terminal
     
 # Shortcuts
 instead of 'execute' you can use 'exec'  
