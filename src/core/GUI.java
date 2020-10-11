@@ -26,6 +26,8 @@ public class GUI {
 	Adder add = new Adder();
 	Visiter visit = new Visiter();
 	Opener open = new Opener();
+	Searcher search = new Searcher();
+	YouTuber yt = new YouTuber();
 	
 	String inputPrefix = " u: ";
 	String reportPrefix = " c: ";
@@ -63,7 +65,7 @@ public class GUI {
 		for (int i = 0; i < labels.length; i++) {
 			labels[i] = new JLabel("");
 			panel.add(labels[i]);
-			labels[i].setBounds((int) (width * 0.025), (i) * (int) (height * 0.10) + 20, (int) (width * 0.95),
+			labels[i].setBounds((int) (width * 0.025), (int) ((i) * (int) (height * 0.10) + height * 0.025), (int) (width * 0.95),
 					(int) (height * 0.09));
 			// labels[i].setBounds(50, i * 120, 800, 100);
 			labels[i].setBackground(labelsColor);
@@ -72,12 +74,14 @@ public class GUI {
 			labels[i].setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, Color.black));
 		}
 
-		panel.add(button); 
-		button.setBounds((int) (width * 0.85), (int) (height * 0.85), (int) (width * 0.125), (int) (height * 0.09));
-		button.setFont(font);
+		//panel.add(button); 
+		//button.setBounds((int) (width * 0.85), (int) (height * 0.85), (int) (width * 0.125), (int) (height * 0.09));
+		//button.setFont(font);
 
 		panel.add(textfield);
-		textfield.setBounds((int) (width * 0.025), (int) (height * 0.85), (int) (width * 0.8), (int) (height * 0.09));
+		//textfield.setBounds((int) (width * 0.025), (int) (height * 0.85), (int) (width * 0.8), (int) (height * 0.09));
+		textfield.setBounds((int) (width * 0.025), (int) (labels.length * (int) (height * 0.10) + height * 0.04), (int) (width * 0.95),
+					(int) (height * 0.09));
 		textfield.setFont(font);
 
 		
@@ -118,9 +122,11 @@ public class GUI {
 		if (cmds.length <= 1) {
 			if (cmds[0].contains("help")) {
 				reportConsole("Commands:");
-				reportConsole("add <prefix> <object> <path>");
+				reportConsole("add <prefix> <object> <path> | NOT WORKING!");
 				reportConsole("execute <program>");
 				reportConsole("visit <website>");
+				reportConsole("search/google/gg <string>");
+				reportConsole("youtube/yt <string>");
 			} else if (cmds[0].contains("7355608")){ 
 				reportConsole("u r cool");
 			} else if (cmds[0].contains("exit")){ 
@@ -140,10 +146,23 @@ public class GUI {
 			for (int i = 1; i < cmds.length; i++) {
 				tempContent += cmds[i] + " ";
 			}
+			// TODO: Fix add
 			//add.addCommand(tempContent);
 			reportConsole("The Add Command is currently not working, sorry.");
 		} else if (cmds[0].contains("open")) {
 			open.open(cmds[1]);
+		} else if (cmds[0].contains("search") || cmds[0].contains("google") || cmds[0].contains("gg")) {
+			String tempContent = "";
+			for (int i = 1; i < cmds.length; i++) {
+				tempContent += cmds[i] + "+";
+			}
+			search.search(tempContent);
+		} else if (cmds[0].contains("youtube") || cmds[0].contains("yt")) {
+			String tempContent = "";
+			for (int i = 1; i < cmds.length; i++) {
+				tempContent += cmds[i] + "+";
+			}
+			yt.youtube(tempContent);
 		}
 		
 	}
