@@ -26,5 +26,5 @@ help
     
 # Shortcuts
 instead of 'execute' you can use 'exec'  
-instead of 'search' you can use 'google' or 'gg  
+instead of 'search' you can use 'google' or 'gg'  
 instead of 'youtube' you can use 'yt'  
