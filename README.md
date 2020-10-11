@@ -6,11 +6,20 @@ Open the 'Terminal (download).zip' file
 to make the .jar work you need the config.cfg, it needs to be in a src/core/config.cfg folder. The src folder must be in the same location as the .jar
 
 # Commands
-execute «program» | Program must be defined in the config.cfg in following format: execute «program» <path»  
-open «folder»     | Folder must be defined in the config.cfg in following format: open «folder» «path»  
-visit «website»   | Website can be defined in the config.cfg in following format: visit «website» «path», otherwise you will just be connected to <website».com  
-search «string»   | Your chosen string will be searched using the google search engine  
-youtube «string»  | Your chosen string will be searched using the youtube search engine  
+execute «program» 
+| Program must be defined in the config.cfg in following format: execute «program» «path»  
+  
+open «folder»     
+| Folder must be defined in the config.cfg in following format: open «folder» «path»  
+  
+visit «website»   
+| Website can be defined in the config.cfg in following format: visit «website» «path», otherwise you will just be connected to <website».com  
+  
+search «string»   
+| Your chosen string will be searched using the google search engine  
+  
+youtube «string»  
+| Your chosen string will be searched using the youtube search engine  
     
 # Shortcuts
 instead of 'execute' you can use 'exec'  
