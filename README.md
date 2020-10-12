@@ -13,7 +13,8 @@ open «folder»
 | Folder must be defined in the config.cfg in following format: open «folder» «path»  
   
 visit «website»   
-| Website can be defined in the config.cfg in following format: visit «website» «path», otherwise you will just be connected to «website».com  
+| Website can be defined in the config.cfg in following format: visit «website» «path»   
+| Otherwise you can type the whole URL into the string and it will redirect you to it (example: visit google.com)
   
 search «string»   
 | Your chosen string will be searched using the google search engine  
