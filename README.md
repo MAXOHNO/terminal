@@ -23,7 +23,10 @@ youtube «string»
 | Your chosen string will be searched using the youtube search engine  
 
 faceitstats «faceit_username»  
-| You will get redircted to the faceitstats of the username you typed in
+| You will get redircted to the faceitstats of the username you typed in  
+
+add <function> <name> <path>  
+| ...
 
 help  
 |  get help in the terminal
