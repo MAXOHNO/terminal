@@ -22,6 +22,9 @@ search «string»
 youtube «string»  
 | Your chosen string will be searched using the youtube search engine  
 
+faceitstats «faceit_username»  
+| You will get redircted to the faceitstats of the username you typed in
+
 help  
 |  get help in the terminal
     
@@ -29,3 +32,4 @@ help
 instead of 'execute' you can use 'exec'  
 instead of 'search' you can use 'google' or 'gg'  
 instead of 'youtube' you can use 'yt'  
+instead of 'faceitstats' you can use 'fs'
