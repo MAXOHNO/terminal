@@ -19,10 +19,10 @@ import javax.swing.event.DocumentListener;
 import algorithms.Adder;
 import algorithms.Executer;
 import algorithms.FaceitStats;
-import algorithms.Logger;
 import algorithms.Opener;
 import algorithms.Searcher;
 import algorithms.Visiter;
+import algorithms.Wikipedia;
 import algorithms.YouTuber;
 
 public class GUI {
@@ -163,23 +163,22 @@ public class GUI {
 
 	public void listenForCommand(String cmd) {
 
-		Logger tempLOG = new Logger();
-		tempLOG.addLog(cmd);
+		// Logger has been disabled for public release
+		//Logger tempLOG = new Logger();
+		//tempLOG.addLog(cmd);
 
 		String[] cmds = cmd.split(" ");
 
 		if (cmds.length <= 1) {
 			if (cmds[0].equals("help")) {
-				reportConsole("cmds1: first page of commands");
-				reportConsole("cmds2: - comming soon -");
-			} else if (cmds[0].equals("cmds1")) {
+				reportConsole("");
 				reportConsole("Commands:");
 				reportConsole("add <prefix> <object> <path>");
 				reportConsole("execute <program>");
 				reportConsole("visit <website>");
 				reportConsole("search/google/gg <string>");
 				reportConsole("youtube/yt <string>");
-				reportConsole("faceitstats/fs <faceit_username>");
+				reportConsole("wikipedia/wiki <string>");
 			} else if (cmds[0].equals("7355608")) {
 				reportConsole("u r cool");
 			} else if (cmds[0].equals("exit") || cmds[0].contains("quit")) {
@@ -227,6 +226,13 @@ public class GUI {
 		} else if (cmds[0].equals("faceitstats") || cmds[0].equals("fs")) {
 			FaceitStats faceit = new FaceitStats();
 			faceit.getStats(cmds[1]);
+		} else if (cmds[0].equals("wikipedia") || cmds[0].equals("wiki")) {
+			Wikipedia wiki = new Wikipedia();
+			String tempContent = "";
+			for (int i = 1; i < cmds.length; i++) {
+				tempContent += cmds[i] + "+";
+			}
+			wiki.wikiSearch(tempContent);
 		}
 
 	}
