@@ -25,8 +25,11 @@ youtube «string»
 faceitstats «faceit_username»  
 | You will get redircted to the faceitstats of the username you typed in  
 
-add <function> <name> <path>  
+add «function» «name» «path»  
 | ...
+
+wikipedia «string»   
+| searches wikipedia for the given string
 
 help  
 |  get help in the terminal
@@ -35,4 +38,5 @@ help
 instead of 'execute' you can use 'exec'  
 instead of 'search' you can use 'google' or 'gg'  
 instead of 'youtube' you can use 'yt'  
-instead of 'faceitstats' you can use 'fs'
+instead of 'faceitstats' you can use 'fs'    
+instead of 'wikipedia' you can use 'wiki'
