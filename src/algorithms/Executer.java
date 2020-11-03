@@ -64,16 +64,21 @@ public class Executer {
 
 			if (splitted[1].contains(arg)) {
 				if (splitted[0].contains("execute")) {
-					System.out.println(splitted[2]);
 
 					// Starting the excecutable
-					try {
+					try {                                                                                                                            
 						if (splitted.length == 3) {
 							Runtime.getRuntime().exec(splitted[2]);
 						} else if (splitted.length == 4) {
 							Runtime.getRuntime().exec(splitted[2] + " " + splitted[3]);
 						} else if (splitted.length == 5) {
 							Runtime.getRuntime().exec(splitted[2] + " " + splitted[3] + " " + splitted[4]);
+						} else if (splitted.length == 6) {
+							Runtime.getRuntime().exec(splitted[2] + " " + splitted[3] + " " + splitted[4] + " " + splitted[5]);
+						} else if (splitted.length == 7) {
+							Runtime.getRuntime().exec(splitted[2] + " " + splitted[3] + " " + splitted[4] + " " + splitted[5] + " " + splitted[6]);
+						} else if (splitted.length == 8) {
+							Runtime.getRuntime().exec(splitted[2] + " " + splitted[3] + " " + splitted[4] + " " + splitted[5] + " " + splitted[6] + " " + splitted[7]);
 						}
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
