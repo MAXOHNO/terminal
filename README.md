@@ -1,6 +1,10 @@
 # Download
 https://steambats.itch.io/easy-terminal
 
+![image](https://user-images.githubusercontent.com/31670615/128560964-6de7f1c7-0341-4768-8d1e-634fef7fd3e3.png)
+![image](https://user-images.githubusercontent.com/31670615/128560970-e171cc57-9bf8-4479-b841-17227001a7b7.png)
+
+
 # How to make it work
 to make the .jar work you need the config.cfg, it needs to be in a src/core/config.cfg folder. The src folder must be in the same location as the .jar
 
